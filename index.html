@@ -11,9 +11,68 @@
 </head>
 
 <body>
+    <div class="container">
 
+        <div class="jumbotron">
+            <h1>A comprehensive Directory of Employee Billable Hours</h1>
+        </div>
 
-
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Role</th>
+                    <th>Start Date</th>
+                    <th>Months Worked</th>
+                    <th>Monthly Rate</th>
+                    <th>Totaly Billed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+            <div class="inputTable">
+                <h1 id="addEmployee">Add Employee</h1>
+                <br>
+                <p>Employee Name</p>
+                <input type="text" id="employee">
+                <br>
+                <p>Role</p>
+                <input type="text" id="role">
+                <br>
+                <p>Start Date (DD/MM/YY - ex: 01/01/09)</p>
+                <input type="text" id="startDate">
+                <br>
+                <p>Monthly Rate</p>
+                <input type="text" id="monthlyRate">
+                <br>
+                <button id="submit">submit</button>
+            </div>
+        </div>
 </body>
 
 </html>
