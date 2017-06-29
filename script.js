@@ -19,8 +19,22 @@ var totalBill;
 
 var database = firebase.database();
 
+
+function writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, totalBill){
+    database.ref('employees/' + name).set({
+        name: name,
+        role: role,
+        startDate: startDate,
+        monthsWorked: monthsWorked,
+        montlyRate: monthlyRate,
+        totalBill: totalBill
+    });
+}
+
+
 //add rows to output table
-$("#submit").click(function(){
+$("#submit").click(function(e){
+    e.preventDefault();
     
     //variables
     var month = new Date().getMonth;
@@ -46,21 +60,12 @@ $("#submit").click(function(){
     
     $(".table").append(row);
     
-    
+    writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, totalBill);
     
 });
 
 
-function writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, totalBill){
-    database.ref('employees/' + name).set({
-        name: name,
-        role: role,
-        startDate: startDate,
-        monthsWorked: monthsWorked,
-        montlyRate: monthlyRate,
-        totalBill: totalBill
-    });
-}
+
 
 
 
