@@ -1,3 +1,11 @@
+//variables
+var name;
+var role;
+var startDate;
+var monthsWorked;
+var monthlyRate;
+var totalBill;
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyA9FQeqDhp1XtMJ445FD9Zw11cehnDoGIo",
@@ -8,6 +16,8 @@
     messagingSenderId: "657337647452"
   };
   firebase.initializeApp(config);
+
+var database = firebase.database();
 
 //add rows to output table
 $("#submit").click(function(){
@@ -20,12 +30,12 @@ $("#submit").click(function(){
 
     var row = $("<tr>");
     
-    var name = $("#employee").val().trim();
-    var role = $("#role").val().trim();
-    var startDate = $("#startDate").val().trim();
-    var monthsWorked = date - startDate;
-    var monthlyRate = $("#monthlyRate").val().trim();
-    var totalBill = (monthsWorked * monthlyRate);
+    name = $("#employee").val().trim();
+    role = $("#role").val().trim();
+    startDate = $("#startDate").val().trim();
+    monthsWorked = date - startDate;
+    monthlyRate = $("#monthlyRate").val().trim();
+    totalBill = (monthsWorked * monthlyRate);
     
     row.append("<td>" + name +"</td>");
     row.append("<td>" + role +"</td>");
@@ -39,3 +49,24 @@ $("#submit").click(function(){
     
     
 });
+
+
+function writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, totalBill){
+    database.ref('employees/' + name).set({
+        name: name,
+        role: role,
+        startDate: startDate,
+        monthsWorked: monthsWorked,
+        montlyRate: monthlyRate,
+        totalBill: totalBill
+    });
+}
+
+
+
+database.ref("employees/").on("value", function(snapshot){
+    
+   
+});
+
+
