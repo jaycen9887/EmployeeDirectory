@@ -5,6 +5,7 @@
     <title>Employee Directory</title>
     <!--Bootstrap source-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <!--CSS source-->
     <link rel="stylesheet" href="style.css">
     <!--JQUERY source-->
@@ -17,47 +18,51 @@
         <div class="jumbotron">
             <h1>A comprehensive Directory of Employee Billable Hours</h1>
         </div>
-
+        <div class="addEmployee">
+            <p>Current Employees</p>
+        </div>
         <table class="table table-hover">
             <thead>
-                <tr>
-                    <th>Employee Name</th>
-                    <th>Role</th>
-                    <th>Start Date</th>
-                    <th>Months Worked</th>
-                    <th>Monthly Rate</th>
-                    <th>Totaly Billed</th>
+
+                <th>Employee Name</th>
+                <th>Role</th>
+                <th>Start Date</th>
+                <th>Months Worked</th>
+                <th>Monthly Rate</th>
+                <th>Totaly Billed</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Kobe Bryant</td>
-                    <td>Baller</td>
-                    <td>09/11/97</td>
-                    <td>8</td>
-                    <td>240000</td>
-                    <td>8000</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
                 </tr>
                 <tr>
-                    <td>Steve Jobs</td>
-                    <td>Professor</td>
-                    <td>06/19/17</td>
-                    <td>99</td>
-                    <td>455000</td>
-                    <td>89000</td>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
                 </tr>
                 <tr>
-                    <td>Jackson Storm</td>
-                    <td>Chef</td>
-                    <td>03/14/00</td>
-                    <td>2</td>
-                    <td>14400</td>
-                    <td>8440</td>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
                 </tr>
             </tbody>
         </table>
         <div class="inputTable">
-            <h1 id="addEmployee">Add Employee</h1>
+            <h1 class="addEmployee">
+                <p>Add Employee</p>
+            </h1>
             <br>
             <p>Employee Name</p>
             <input type="text" id="employee">
@@ -74,7 +79,6 @@
             <button id="submit">submit</button>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>
