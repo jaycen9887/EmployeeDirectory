@@ -6,6 +6,7 @@ var monthsWorked;
 var monthlyRate;
 var totalBill;
 
+<<<<<<< HEAD
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyA9FQeqDhp1XtMJ445FD9Zw11cehnDoGIo",
@@ -16,6 +17,18 @@ var config = {
     messagingSenderId: "657337647452"
 };
 firebase.initializeApp(config);
+=======
+   // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBVe0AdtLEQMr_3WKMrXCzRWY2I14LfKY",
+    authDomain: "employees-1f1f3.firebaseapp.com",
+    databaseURL: "https://employees-1f1f3.firebaseio.com",
+    projectId: "employees-1f1f3",
+    storageBucket: "employees-1f1f3.appspot.com",
+    messagingSenderId: "670118912128"
+  };
+  firebase.initializeApp(config);
+>>>>>>> 0d10f9ed42fc07397cc914349d842d37b4aa261a
 
 var database = firebase.database();
 
@@ -59,18 +72,34 @@ $("#submit").click(function (e) {
     row.append("<td>" + (33 * 2200) + "</td>");
 
     $(".table").append(row);
+<<<<<<< HEAD
 
 
 
     database.ref("employes").push({
+=======
+    
+    
+    
+    var newEmployee = {
+        
+>>>>>>> 0d10f9ed42fc07397cc914349d842d37b4aa261a
         name: name,
         role: role,
         startDate: startDate,
-        monthsWorked: monthsWorked,
+        monthsWorked: 33,
         montlyRate: monthlyRate,
+<<<<<<< HEAD
         totalBill: totalBill
     });
 
+=======
+        totalBill: (33 * monthlyRate)
+    };
+    
+    database.ref().push(newEmployee);
+    
+>>>>>>> 0d10f9ed42fc07397cc914349d842d37b4aa261a
 });
 
 
