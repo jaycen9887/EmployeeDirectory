@@ -20,7 +20,7 @@ var totalBill;
 var database = firebase.database();
 
 
-function writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, totalBill){
+/*function writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, totalBill){
     database.ref('employees/' + name).set({
         name: name,
         role: role,
@@ -29,7 +29,7 @@ function writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, tot
         montlyRate: monthlyRate,
         totalBill: totalBill
     });
-}
+}*/
 
 
 //add rows to output table
@@ -54,13 +54,22 @@ $("#submit").click(function(e){
     row.append("<td>" + name +"</td>");
     row.append("<td>" + role +"</td>");
     row.append("<td>" + startDate +"</td>");
-    row.append("<td>" + monthsWorked +"</td");
+    row.append("<td>" + 33 +"</td");
     row.append("<td>" + monthlyRate +"</td>");
-    row.append("<td>" + totalBill +"</td>");
+    row.append("<td>" + (33 * 2200) +"</td>");
     
     $(".table").append(row);
     
-    writeEmployeeData(name, role, startDate, monthsWorked, monthlyRate, totalBill);
+    
+    
+    database.ref("employes").push({
+        name: name,
+        role: role,
+        startDate: startDate,
+        monthsWorked: monthsWorked,
+        montlyRate: monthlyRate,
+        totalBill: totalBill
+    });
     
 });
 
@@ -69,7 +78,7 @@ $("#submit").click(function(e){
 
 
 
-database.ref("employees/").on("value", function(snapshot){
+database.ref('employees/').on("child_added", function(childSnapshot){
     
    
 });
