@@ -6,14 +6,14 @@ var monthsWorked;
 var monthlyRate;
 var totalBill;
 
-// Initialize Firebase
+   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyA9FQeqDhp1XtMJ445FD9Zw11cehnDoGIo",
-    authDomain: "employeedirectory-d2bc2.firebaseapp.com",
-    databaseURL: "https://employeedirectory-d2bc2.firebaseio.com",
-    projectId: "employeedirectory-d2bc2",
-    storageBucket: "",
-    messagingSenderId: "657337647452"
+    apiKey: "AIzaSyBBVe0AdtLEQMr_3WKMrXCzRWY2I14LfKY",
+    authDomain: "employees-1f1f3.firebaseapp.com",
+    databaseURL: "https://employees-1f1f3.firebaseio.com",
+    projectId: "employees-1f1f3",
+    storageBucket: "employees-1f1f3.appspot.com",
+    messagingSenderId: "670118912128"
   };
   firebase.initializeApp(config);
 
@@ -62,14 +62,17 @@ $("#submit").click(function(e){
     
     
     
-    database.ref("employes").push({
+    var newEmployee = {
+        
         name: name,
         role: role,
         startDate: startDate,
-        monthsWorked: monthsWorked,
+        monthsWorked: 33,
         montlyRate: monthlyRate,
-        totalBill: totalBill
-    });
+        totalBill: (33 * monthlyRate)
+    };
+    
+    database.ref().push(newEmployee);
     
 });
 
